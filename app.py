@@ -46,7 +46,10 @@ def index():
     # Renderizamos el archivo HTML 'index.html' y le pasamos la variable 'mensaje'
     return render_template('index.html', mensaje=mensaje)
 
-# Punto de entrada del programa (solo se ejecuta si corremos este archivo directamente)
 if __name__ == '__main__':
-    # Ejecutamos la aplicación Flask en modo depuración (debug) y en el puerto 5500
-    app.run(debug=True, port=5500)
+    # Render necesita que la app escuche en host 0.0.0.0 y el puerto que Render le asigne
+    import os
+    port = int(os.environ.get("PORT", 5500))
+    app.run(host="0.0.0.0", port=port, debug=False)
+    # Ejecutamos la aplicación en modo debug para facilitar el desarrollo
+    # app.run(debug=True)
