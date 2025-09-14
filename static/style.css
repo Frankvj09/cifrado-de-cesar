@@ -65,17 +65,18 @@ button:hover {
   
 /* Cuadro flotante de instrucciones */
 .instrucciones {
-    position: fixed;                      /* Se queda fija en la pantalla aunque se haga scroll */
-    top: 350px;                           /* Posición desde la parte superior */
-    right: 200px;                         /* Posición desde la derecha */
-    width: 500px;                         /* Ancho del cuadro */
-    background: #ffffff;                  /* Fondo blanco */
-    border: 2px solid #116bb4;             /* Borde azul de 2px */
-    border-radius: 10px;                  /* Bordes redondeados */
-    padding: 20px;                        /* Espaciado interno */
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);  /* Sombra suave alrededor */
-    max-height: 600vh;                    /* Altura máxima (muy grande para permitir scroll) */
-    overflow-y: auto;                     /* Muestra scroll vertical si el contenido sobrepasa el tamaño */
+    position: relative;              /* Se comporta de manera normal dentro del flujo de la página */
+    width: 90%;                      /* Ocupa el 90% del ancho de la página */
+    max-width: 800px;                /* Máximo ancho, opcional */
+    margin: 20px auto;               /* Centrado horizontal con espacio superior */
+    background: #ffffff;             /* Fondo blanco */
+    border: 2px solid #116bb4;       /* Borde azul */
+    border-radius: 10px;             /* Bordes redondeados */
+    padding: 40px;                   /* Espaciado interno */
+    box-shadow: 0 0 30px rgba(0,0,0,0.1); /* Sombra suave */
+    max-height: 80vh;                /* Máximo alto de la ventana */
+    overflow-y: auto;                /* Scroll vertical si el contenido supera el tamaño */
+    box-sizing: border-box;          /* Para incluir padding y border dentro del ancho */
 }
 
 /* Título dentro de las instrucciones */
