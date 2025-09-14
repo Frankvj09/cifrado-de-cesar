@@ -1,0 +1,77 @@
+<!DOCTYPE html> <!-- Indica que el documento usa HTML5 -->
+<html lang="es"> <!-- Lenguaje del contenido: español -->
+
+<head>
+  <meta charset="UTF-8"> <!-- Configura la codificación de caracteres (permite tildes y ñ) -->
+  <title>Cifrado César</title> <!-- Título que aparece en la pestaña del navegador -->
+
+  <!-- Vincula el archivo CSS externo ubicado en la carpeta "static" -->
+  <!-- Flask usa url_for('static', filename='...') para buscar archivos estáticos -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <!-- ENCABEZADO SUPERIOR DE LA PÁGINA -->
+  <header>
+    <!-- Texto que aparece arriba como título o lema -->
+    <h1>Descubre cómo se ocultaban los mensajes en la antigüedad</h1>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
+  <main>
+
+    <!-- Contenedor central que agrupa la imagen y el formulario -->
+    <div class="contenedor">
+        
+        <!-- Imagen decorativa (se encuentra en static/img/1.png) -->
+        <img src="static/img/1.png" 
+             alt="Inspector Gadget" 
+             class="imagen">   
+
+        <!-- FORMULARIO para enviar el texto a cifrar -->
+        <!-- Usa el método POST para que los datos viajen al backend de Flask -->
+        <form method="POST" class="formulario">
+          <!-- Campo de texto para escribir el mensaje -->
+          <input type="text" name="texto" placeholder="Escribe un texto" required>
+
+          <!-- Campo numérico para ingresar el desplazamiento (puede ser negativo) -->
+          <input type="number" name="desplazamiento" placeholder="Desplazamiento" required>
+
+          <!-- Botón para enviar el formulario -->
+          <button type="submit">Cifrar</button>
+        </form>
+
+        <!-- BLOQUE QUE MUESTRA EL RESULTADO CIFRADO (solo aparece si hay un mensaje) -->
+        {% if mensaje %}
+          <div class="resultado">
+            <h2>Texto cifrado:</h2>
+            <!-- Aquí Flask inserta el texto cifrado que devuelve el backend -->
+            <p>{{ mensaje }}</p>
+          </div>
+        {% endif %}
+    </div>
+
+    <!-- BARRA LATERAL DERECHA CON INSTRUCCIONES DE USO -->
+    <div class="instrucciones">
+        <h2>Instrucciones</h2>
+        <p>
+          El Cifrado de Cesar funciona desplazando cada letra del mensaje un número fijo de posiciones en el alfabeto.
+        </p>
+        <ul>
+          <li>Un <b>desplazamiento positivo</b> (ej: 3) mueve las letras hacia la <b>derecha</b>.</li>
+          <li>Un <b>desplazamiento negativo</b> (ej: -3) mueve las letras hacia la <b>izquierda</b>.</li>
+          <li>Solo se cifran las letras. Espacios y signos permanecen igual.</li>
+          <li>Ejemplo: con desplazamiento 3, A → D, B → E, C → F.</li>
+        </ul>
+    </div>
+
+  </main>
+
+  <!-- PIE DE PÁGINA CON INFORMACIÓN PERSONAL Y ACADÉMICA -->
+  <footer>
+    <p>Nombre: Francisco Vallejos | Curso: 6o1T | Universidad: Universidad de Cundinamarca</p>
+  </footer>
+
+</body>
+</html>

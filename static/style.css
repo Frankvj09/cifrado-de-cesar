@@ -1,0 +1,93 @@
+/* Estilos generales del cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;       /* Fuente principal de todo el texto */
+    background: #ffffff;                  /* Color de fondo blanco */
+    margin: 0;                            /* Elimina los márgenes por defecto del navegador */
+    display: flex;                        /* Usa flexbox para organizar el contenido */
+    flex-direction: column;               /* Los elementos hijos se organizan en columna (de arriba a abajo) */
+    min-height: 100vh;                    /* Ocupa como mínimo toda la altura de la ventana */
+}
+  
+/* Encabezado de la página */
+header {
+    background: #116bb4;                  /* Fondo azul */
+    color: #ffffff;                       /* Texto blanco */
+    padding: 0px;                         /* Sin espacio interno (puedes aumentar para más separación) */
+    text-align: center;                   /* Centra el texto horizontalmente */
+}
+  
+/* Contenedor principal */
+main {
+    flex: 1;                              /* Ocupa el espacio disponible restante */
+    display: flex;                        /* Flexbox para centrar contenido */
+    justify-content: center;              /* Centra el contenido horizontalmente */
+    align-items: center;                  /* Centra el contenido verticalmente */
+}
+  
+/* Contenedor del formulario e imagen */
+.contenedor {
+    text-align: center;                   /* Centra el contenido dentro del contenedor */
+}
+  
+/* Imagen de la página */
+.imagen {
+    width: 400px;                         /* Ancho fijo de la imagen */
+    margin-bottom: 0px;                   /* Sin espacio inferior */
+}
+  
+/* Campos del formulario (input y botón) */
+.formulario input, .formulario button {
+    display: block;                       /* Cada elemento en su propia línea */
+    margin: 10px auto;                    /* Margen vertical de 10px y centrado horizontal */
+    padding: 10px;                        /* Relleno interno de 10px */
+    width: 250px;                         /* Ancho fijo de 250px */
+    font-size: 16px;                      /* Tamaño de letra de 16px */
+}
+  
+/* Botón principal */
+button {
+    background: #116bb4;                  /* Fondo azul */
+    color: white;                         /* Texto blanco */
+    border: none;                         /* Sin borde */
+    cursor: pointer;                      /* Cambia el cursor a “mano” al pasar encima */
+    border-radius: 6px;                   /* Bordes redondeados */
+}
+  
+/* Efecto al pasar el ratón sobre el botón */
+button:hover {
+    background: #3653c9;                  /* Cambia el color de fondo a un azul más oscuro */
+}
+  
+/* Contenedor donde aparece el resultado del cifrado */
+.resultado {
+    margin-top: 20px;                     /* Espacio superior de 20px */
+}
+  
+/* Cuadro flotante de instrucciones */
+.instrucciones {
+    position: fixed;                      /* Se queda fija en la pantalla aunque se haga scroll */
+    top: 350px;                           /* Posición desde la parte superior */
+    right: 200px;                         /* Posición desde la derecha */
+    width: 500px;                         /* Ancho del cuadro */
+    background: #ffffff;                  /* Fondo blanco */
+    border: 2px solid #116bb4;             /* Borde azul de 2px */
+    border-radius: 10px;                  /* Bordes redondeados */
+    padding: 20px;                        /* Espaciado interno */
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);  /* Sombra suave alrededor */
+    max-height: 600vh;                    /* Altura máxima (muy grande para permitir scroll) */
+    overflow-y: auto;                     /* Muestra scroll vertical si el contenido sobrepasa el tamaño */
+}
+
+/* Título dentro de las instrucciones */
+.instrucciones h2 {
+    color: #116bb4;                       /* Color azul para el título */
+    text-align: center;                   /* Centrado del texto */
+}
+
+/* Pie de página */
+footer {
+    background: #333;                     /* Fondo gris oscuro */
+    color: white;                         /* Texto blanco */
+    text-align: center;                   /* Centrado del texto */
+    padding: 15px;                        /* Espaciado interno */
+}
